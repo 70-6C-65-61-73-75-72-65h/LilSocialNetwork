@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/LilSocialNetwork/static/css/main.38e9ab1a.chunk.css",
-    "main.js": "/LilSocialNetwork/static/js/main.1a92da45.chunk.js",
-    "main.js.map": "/LilSocialNetwork/static/js/main.1a92da45.chunk.js.map",
+    "main.js": "/LilSocialNetwork/static/js/main.e3e3ee0b.chunk.js",
+    "main.js.map": "/LilSocialNetwork/static/js/main.e3e3ee0b.chunk.js.map",
     "runtime-main.js": "/LilSocialNetwork/static/js/runtime-main.494f4788.js",
     "runtime-main.js.map": "/LilSocialNetwork/static/js/runtime-main.494f4788.js.map",
     "static/js/2.c11ebca9.chunk.js": "/LilSocialNetwork/static/js/2.c11ebca9.chunk.js",
     "static/js/2.c11ebca9.chunk.js.map": "/LilSocialNetwork/static/js/2.c11ebca9.chunk.js.map",
     "index.html": "/LilSocialNetwork/index.html",
-    "precache-manifest.4af8fa1c9b574bcf9b43efc53fa346b3.js": "/LilSocialNetwork/precache-manifest.4af8fa1c9b574bcf9b43efc53fa346b3.js",
+    "precache-manifest.1606b5ae0c7caebfbe7c6d00a695118c.js": "/LilSocialNetwork/precache-manifest.1606b5ae0c7caebfbe7c6d00a695118c.js",
     "service-worker.js": "/LilSocialNetwork/service-worker.js",
     "static/css/main.38e9ab1a.chunk.css.map": "/LilSocialNetwork/static/css/main.38e9ab1a.chunk.css.map",
     "static/js/2.c11ebca9.chunk.js.LICENSE.txt": "/LilSocialNetwork/static/js/2.c11ebca9.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.494f4788.js",
     "static/js/2.c11ebca9.chunk.js",
     "static/css/main.38e9ab1a.chunk.css",
-    "static/js/main.1a92da45.chunk.js"
+    "static/js/main.e3e3ee0b.chunk.js"
   ]
 }
