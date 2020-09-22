@@ -57,6 +57,9 @@ background: red;
     display: block;
 }
 
+
+
+
 .messageFile {
     grid-area:messageFile;
     position: absolute;

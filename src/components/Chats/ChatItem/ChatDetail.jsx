@@ -197,22 +197,22 @@ const ChatDetail = ({getCurrentChatData, getMessages, IsFetchingMsgs,
     useEffect(() => {/////////////////////////////////////////////////// (RD)
             // if(preFetch) {
             let sTOID = null
-            console.log("refreshIsRunning")
-            console.log(refreshIsRunning)
+            // console.log("refreshIsRunning")
+            // console.log(refreshIsRunning)
             if(!refreshIsRunning){
             sTOID = setTimeout( async () => {
                 // setRIR(true)
                 if( !oldMsgsDonwload && preFetch && !IsFetchingMsgs && !positioningScrollRefScroll){
                     // debugger
                     setRIR(true)
-                    let currentdate = new Date(); 
-                    let datetime = "Last Sync: " + currentdate.getDate() + "/"
-                    + (currentdate.getMonth()+1)  + "/" 
-                    + currentdate.getFullYear() + " @ "  
-                    + currentdate.getHours() + ":"  
-                    + currentdate.getMinutes() + ":" 
-                    + currentdate.getSeconds();
-                    console.log(datetime)
+                    // let currentdate = new Date(); 
+                    // let datetime = "Last Sync: " + currentdate.getDate() + "/"
+                    // + (currentdate.getMonth()+1)  + "/" 
+                    // + currentdate.getFullYear() + " @ "  
+                    // + currentdate.getHours() + ":"  
+                    // + currentdate.getMinutes() + ":" 
+                    // + currentdate.getSeconds();
+                    // console.log(datetime)
                     await getMessages(_chatTypeId, _chatId, _readFromIndex, props.readFromIndexBefore, null, (windowScrollOnMsgCreate && !isMessageCreating), numOfDeletedMsgs )
                     setRIR(false)
                 } 

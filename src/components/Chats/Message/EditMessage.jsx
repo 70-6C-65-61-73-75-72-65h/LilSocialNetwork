@@ -18,7 +18,7 @@ const EditMessageActive = ({isInvalid, onMBChange, deactivateEditMode, editedMes
     </div>)
 }
 
-const EditMessageInactive = ({fileId, activateEditMode, messageBody, fileImageURL, loadFile, ENSM}) => { 
+const EditMessageInactive = ({fileId, activateEditMode, messageBody, fileImageURL,loadFile, ENSM}) => { 
     if (fileId){
         return ( <div className={styleMessages.messageBody} onDoubleClick={!ENSM? activateEditMode: undefined}> {messageBody} 
             <div className={`${styleMessages.messageFile} ${fileImageURL===null ? styleMessages.fileImageDeactivate : styleMessages.fileImageActivate}`}>
@@ -35,8 +35,9 @@ const EditMessageInactive = ({fileId, activateEditMode, messageBody, fileImageUR
 
 function urltoFile(url, filename, mimeType){
     return (fetch(url)
+        .then(res =>( console.log(res), res) )
         .then(function(res){return res.arrayBuffer();})
-        .then(function(buf){return new File([buf], filename,{type:mimeType});})
+        .then(function(buf){let newFile = new File([buf], filename,{type:mimeType});;  console.log(newFile); return newFile; })
     );
 }
 
@@ -51,24 +52,32 @@ export const EditMessage = ({messageBody, editMessage, ENSM, fileId, getFile}) =
 
             console.log(file)
         
-            if(!file.isImage){
-                urltoFile(file, file.name, file.format)
-                .then(function(file){ 
-                    console.log(file);
-                        saveAs(file); });
-            } else {
+            // if(!file.isImage){
+            //     urltoFile(file.file, file.name, file.format)
+            //     .then(function(file){ 
+            //         console.log(file);
+            //             saveAs(file); });
+            // } else {
 
                 urltoFile(file.file, file.name, file.format)
-                .then(function(file){ 
+                .then(function(fileConv){ 
                     let reader = new FileReader();
                     reader.onload = function(upload) {
-                        setFII(upload.target.result)
-                        console.log(upload);
-                        console.log(upload.target.result);
+                        // setFII(upload.target.result)
+                        // console.log(upload);
+                        // console.log(upload.target.result);
                         console.log("Uploaded");
+                        
+                        if(file.isImage){
+                            console.log(setFII(upload.target.result))
+                            console.log(' file.isImage');
+                            
+                        } else {
+                            saveAs(fileConv);
+                        }
                     }
-                    reader.readAsDataURL(file);})
-            }
+                    reader.readAsDataURL(fileConv);})
+            // }
 
         } else {
             console.log('error in getting file from api')
@@ -78,7 +87,7 @@ export const EditMessage = ({messageBody, editMessage, ENSM, fileId, getFile}) =
     return ( 
             <>
                 {!editMode && 
-                <EditMessageInactive fileId={fileId} activateEditMode={activateEditMode} messageBody={messageBody} fileImageURL={fileImageURL} loadFile={loadFile.bind(this)} ENSM={ENSM}/>
+                <EditMessageInactive fileId={fileId} activateEditMode={activateEditMode} messageBody={messageBody} fileImageURL={fileImageURL}  loadFile={loadFile.bind(this)} ENSM={ENSM}/>
                 }
                 {editMode &&
                 <EditMessageActive isInvalid={isInvalid} onMBChange={onMBChange} deactivateEditMode={deactivateEditMode} editedMessage={editedMessage} charCount={charCount} />
