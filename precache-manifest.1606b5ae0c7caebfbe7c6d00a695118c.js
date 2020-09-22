@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3ddce620d4dc90cdcdfe89403e2520de",
+    "revision": "76e4261bef08a6e1bcd0aa5579d3aaa6",
     "url": "/LilSocialNetwork/index.html"
   },
   {
-    "revision": "9974173c612905b03270",
-    "url": "/LilSocialNetwork/static/css/main.4e3a0e3b.chunk.css"
+    "revision": "c673f687c5fc07b39659",
+    "url": "/LilSocialNetwork/static/css/main.38e9ab1a.chunk.css"
   },
   {
-    "revision": "a24d16a4ecfa8c01b461",
-    "url": "/LilSocialNetwork/static/js/2.4aabe768.chunk.js"
+    "revision": "6d6fdb59e3fe30c0eebc",
+    "url": "/LilSocialNetwork/static/js/2.c11ebca9.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/LilSocialNetwork/static/js/2.4aabe768.chunk.js.LICENSE.txt"
+    "url": "/LilSocialNetwork/static/js/2.c11ebca9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "9974173c612905b03270",
-    "url": "/LilSocialNetwork/static/js/main.ecd3fbcc.chunk.js"
+    "revision": "c673f687c5fc07b39659",
+    "url": "/LilSocialNetwork/static/js/main.e3e3ee0b.chunk.js"
   },
   {
     "revision": "880968ca5545e3630f57",
