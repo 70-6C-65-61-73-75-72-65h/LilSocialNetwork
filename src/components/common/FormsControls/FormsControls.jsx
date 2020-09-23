@@ -177,12 +177,14 @@ export const FileInput = (props) => {
         input.onChange(null)
       }
     }
-  
-    // render() {
-  
-      return (
-    //   <>
+
+
+    const fileInputKey = input.value ? input.value.name : +new Date();
+
+    return (
+  //   <>
         <input 
+          key={fileInputKey}
           type="file"
           onChange={onFileChange}
         //   {...input} {...restProps}
