@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from './FormsControls.module.css'
+import styles from './FormsControls.module.scss'
 import { Field } from 'redux-form';
 
 import PropTypes from 'prop-types';
@@ -16,15 +16,15 @@ const FormControl = ({ input, meta: {touched, error, warning}, children }) => { 
     const hasWarn = touched && warning;
     return (
         <div className={styles.formControl + ' ' + (hasError ? styles.error: "") + ' ' + (hasWarn ? styles.warning: "")}>
-            <div className=''>
+            {/* <div className={styles.formValues}> */}
                 {children}
-            </div>
-            <div className=''>
+            {/* </div> */}
+            {/* <div className={styles.formErrors}> */}
                 {
                 (hasError && <span>{error}</span>) ||
                 (hasWarn && <span>{warning}</span>)
                 }
-            </div>
+            {/* </div> */}
         </div>
     )
 }
@@ -32,7 +32,8 @@ const FormControl = ({ input, meta: {touched, error, warning}, children }) => { 
 
 export const TextArea = (props) => {
     const { input, meta, child, ...restProps } = props;
-    return (<FormControl {...props}><textarea {...input} {...restProps} /></FormControl>)
+    console.log(restProps.onCTRLEnt)
+    return (<FormControl {...props}><textarea {...input} {...restProps} onKeyUp={restProps.onCTRLEnt} /></FormControl>)
 }
 
 export const Input = (props) => {
@@ -42,6 +43,7 @@ export const Input = (props) => {
     // console.log('Input child: ' + child)
     // console.log('Input restProps: ' + restProps)
     // console.log('Input props: ' + props)
+    // if(restProps.type === 'checkbox') return  (<FormControl {...props}><input {...input} {...restProps}  className={styles.checkboxPos} /></FormControl>)
     return (<FormControl {...props}><input {...input} {...restProps}/></FormControl>)
 }
 
@@ -155,6 +157,11 @@ export const Input = (props) => {
 
 // export class FileInput extends React.Component {
 export const FileInput = (props) => {
+    
+    // const styleFileInput = {
+    //     heigth: "1vh"
+    // }
+
 
     const { input, meta, child, ...restProps } = props;
 
@@ -177,21 +184,15 @@ export const FileInput = (props) => {
         input.onChange(null)
       }
     }
-
-
+ 
     const fileInputKey = input.value ? input.value.name : +new Date();
 
-    return (
-  //   <>
+      return ( 
         <input 
-          key={fileInputKey}
-          type="file"
-          onChange={onFileChange}
-        //   {...input} {...restProps}
-        />
-        
-      )
-    // }
+            key={fileInputKey}
+            type="file"
+            onChange={onFileChange}  /> 
+      ) 
   }
   
 

@@ -4,5 +4,5 @@
 // import { maxLength30, maxLength50, maxLength200 } from '../../../utils/validators/validators';
 // import { connect } from 'react-redux';
 // import { Redirect } from 'react-router-dom';
-// import styles from '../../common/FormsControls/FormsControls.module.css'
+// import styles from '../../common/FormsControls/FormsControls.module.scss'
 // import { deleteUserProfile } from '../../../redux/profile-reducer';

@@ -2,7 +2,7 @@ import React from 'react';
 import { createField, Input } from '../common/FormsControls/FormsControls';
 import { reduxForm } from 'redux-form';
 import { maxLength50 } from '../../utils/validators/validators';
-import styles from '../common/FormsControls/FormsControls.module.css'
+import styles from '../common/FormsControls/FormsControls.module.scss'
 import { searchUsers , setQuery} from '../../redux/users-reducer';
 import { connect } from 'react-redux';
 import {getCurrentPage, getQuery} from "../../redux/users-selectors";
@@ -10,8 +10,8 @@ import {getCurrentPage, getQuery} from "../../redux/users-selectors";
 const UsersSearchForm = props => {
     const { handleSubmit, pristine, reset, submitting, error, query } = props
     return (
-        <form onSubmit={handleSubmit}>
-            {createField(query, "search", Input, [maxLength50], {defaultValue: query})}
+        <form onSubmit={handleSubmit} autoComplete='off'>
+            {createField(query, "search", Input, [maxLength50], {defaultValue: ''})}
             {
             error && 
             <div className={styles.formSummaryError}>
@@ -19,7 +19,7 @@ const UsersSearchForm = props => {
             </div>
             }
             <div className=''>
-                <button type='submit' disabled={pristine || submitting} >Run</button>
+                <button type='submit' disabled={submitting} >Run</button>
             </div>
             <div className=''>
                 <button type='button' disabled={pristine || submitting} onClick={reset}>Clear Values</button>
@@ -39,7 +39,7 @@ const UsersSearch = (props) => {
 
     return (<>
         <div className=''>
-            <label htmlFor="">SEARCH: </label><UsersSearchReduxForm onSubmit={onSubmit} query={props.query}/>
+            <label htmlFor="">SEARCH: </label><UsersSearchReduxForm onSubmit={onSubmit}  />
         </div>
         </>)
 }

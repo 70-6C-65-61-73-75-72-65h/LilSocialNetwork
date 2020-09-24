@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './MyPosts.module.css';
+import s from './MyPosts.module.scss';
 import Post from './Post/Post';
 import { reduxForm } from 'redux-form';
 import { requiredField, maxLength30 } from '../../../utils/validators/validators';
@@ -55,7 +55,7 @@ export default connect(mapStateToProps, {addPost})(MyPosts);
 
 
 // import React from 'react';
-// import s from './MyPosts.module.css';
+// import s from './MyPosts.module.scss';
 // import Post from './Post/Post';
 
 

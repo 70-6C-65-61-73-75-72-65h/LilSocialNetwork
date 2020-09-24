@@ -1,5 +1,5 @@
 // import React from 'react';
-// import s from './ProfileInfo.module.css';
+// import s from './ProfileInfo.module.scss';
 // import Preloader from '../../common/Preloader/Preloader';
 
 // const ProfileInfo = (props) => {
@@ -27,7 +27,7 @@
 
 
 import React from 'react';
-import s from './ProfileInfo.module.css';
+import s from './ProfileInfo.module.scss';
 import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 import { NavLink } from 'react-router-dom';
@@ -42,7 +42,7 @@ const ProfileInfo = ({ profile, updateStatus, updatePhoto, ENSM }) => {
         <div className={s.profile_info}>
             <div className={s.landi_block}>
                 <img
-                    src='https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&h=350' />
+                    src='img2.goodfon.ru/wallpaper/big/3/9a/planety-kosmos-oskolki.jpg' />
             </div>
             <div className={s.descriptionBlock}>
                 <div className={s.ava_block}>

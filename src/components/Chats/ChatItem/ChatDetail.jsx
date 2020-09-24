@@ -24,8 +24,8 @@ import { selectChatMessages, selectCIPS, selectCTIPS, selectCurrentChat, selectF
 import Message from '../Message/Message';
 
 
-import styleMessages from '../Message/Message.module.css';
-import styleChats from '../Chats.module.css';
+import styleMessages from '../Message/Message.module.scss';
+import styleChats from '../Chats.module.scss';
 import CreateMessage from '../Message/CreateMessage'; 
 import { ChangeChatPhoto, RenameChat, Member, Members, SelectMemberToChat } from './ChatItem';
 import { addFocusedWindow, clearCurrentFocusedWindow } from '../../../redux/app-reducer';
@@ -358,17 +358,17 @@ const ChatDetail = ({getCurrentChatData, getMessages, IsFetchingMsgs,
                             <div className={styleMessages.chatsSettingsItemH}>Rename Chat</div>
                                 <RenameChat msgStyle={styleMessages.chatsSettingsItemForm} renameChatRequest={props.renameChatRequest} chatTypeId={_chatTypeId} chatId={_chatId}/>
                             </div> 
-                             </>
+                        </>
                     } 
                         <div className={styleMessages.chatsSettingsItem}>
-                            <div className={styleMessages.chatsMembersHeader}>
+                            < >
                                 {
                                 props.fWMFC.data === null &&
                                 <a onClick={(event)=>(event.stopPropagation(), props.addFocusedWindow(props.fWMFC.id, true))}>
                                     Chat Members
                                 </a>
                                 }
-                            </div>
+                            </ >
                         </div>
                     
 
